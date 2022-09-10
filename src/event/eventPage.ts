@@ -29,6 +29,7 @@ function init() {
     eventChromeListener.subscribe((value) => {
         console.log(value);
     })
+    console.log('hello ')
 
 }
 

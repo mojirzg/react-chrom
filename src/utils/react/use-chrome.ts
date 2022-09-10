@@ -7,7 +7,9 @@ export const useChromeStorage = <T = any>(key: string) => {
     const storage = chrome.storage.sync;
 
     let unmounted = false
-    useEffect(() => () => unmounted = true, []);
+    useEffect(() => () => {
+        unmounted = true
+    }, []);
     useCallback(() => {
         storage.get(key, (obj) => !unmounted && item !== obj[key] && setItem(obj[key]))
     }, [item]);
